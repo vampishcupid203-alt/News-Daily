@@ -1,0 +1,26 @@
+{
+  "name": "news-tracer",
+  "version": "1.0.0",
+  "description": "Search the news, see what's being reported, then verify it yourself. A keyless, static, client-side news aggregator over GDELT with Hacker News fallback.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "node tools/serve.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "news",
+    "gdelt",
+    "fact-checking",
+    "aggregator",
+    "static-site"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vampishcupid203-alt/News-Daily.git"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

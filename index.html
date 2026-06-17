@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- script-src 'self' blocks inline/injected scripts and javascript: URLs; connect-src
+     is open because the proxy/data hosts are user-configurable. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src *; base-uri 'none'">
+<title>News Tracer</title>
+<meta name="description" content="Search the news, see what's being reported, then check it yourself. Top stories from the last 48 hours with key facts and links to verify against primary sources.">
+
+<!-- Optional: point at your own CORS proxy for rock-solid fetching. See README.
+<meta name="news-tracer-proxy" content="https://your-worker.example.workers.dev/?url={url}"> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="strip">
+      <span>Issue 1</span>
+      <span id="date">—</span>
+      <span>English</span>
+    </div>
+    <h1 class="title">News Tracer</h1>
+    <p class="tagline">See what's being reported, then check it yourself.</p>
+  </header>
+
+  <section class="ask">
+    <p>What do you want to look up?</p>
+    <form id="form">
+      <label for="q" class="visually-hidden">Search topic</label>
+      <input type="text" id="q" placeholder="a name, a place, an event…" autocomplete="off" required maxlength="200">
+      <button type="submit" id="btn">Search</button>
+    </form>
+    <p class="picks">
+      Try
+      <button type="button" class="pick" data-q="SpaceX">SpaceX</button>,
+      <button type="button" class="pick" data-q="climate">climate</button>,
+      <button type="button" class="pick" data-q="Federal Reserve">the Fed</button>,
+      <button type="button" class="pick" data-q="artificial intelligence">AI</button>, or
+      <button type="button" class="pick" data-q="earthquake">earthquakes</button>.
+    </p>
+  </section>
+
+  <aside class="note">
+    <span class="note-label">How this works</span>
+    Type a topic. You'll get the top stories from the last 48 hours, with the key facts pulled out as bullets. Each fact links to the article it came from. The links at the bottom let you check the broader topic against official sources.
+  </aside>
+
+  <main id="out"></main>
+  <p id="sr-status" aria-live="polite" class="visually-hidden"></p>
+
+  <footer>
+    <p>Sources · <a href="https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/" target="_blank" rel="noopener">GDELT</a> · <a href="https://hn.algolia.com/api" target="_blank" rel="noopener">Hacker News (backup)</a></p>
+    <p class="col">A hundred outlets agreeing on something doesn't make it true. The links will take you to the original — that's where verification actually happens.</p>
+  </footer>
+
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

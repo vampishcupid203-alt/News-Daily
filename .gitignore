@@ -1,0 +1,22 @@
+# dependencies (none required, but just in case)
+node_modules/
+
+# logs
+*.log
+npm-debug.log*
+
+# os / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# build / coverage output
+dist/
+coverage/
+.cache/
+
+# test / verification artifacts
+.playwright-mcp/
+*.png
